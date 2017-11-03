@@ -1,0 +1,27 @@
+{
+    "name": "sam",
+    "version": "1.0.0",
+    "description": "A Discord bot for Lords Mobile",
+    "author": {
+        "name": "Patrick Weaver",
+        "twitter": "septor",
+        "github": "septor"
+    },
+    "dependencies": {
+        "discord.js": "^11.2.1",
+        "glob": "^7.1.2",
+        "sqlite": "^2.8.0"
+    },
+    "main": "bot.js",
+    "license": "MIT",
+    "keywords": [
+        "discord",
+        "discord.js",
+        "bot",
+        "chat",
+        "lords"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}
