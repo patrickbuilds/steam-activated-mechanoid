@@ -1,0 +1,5 @@
+*.sqlite
+config.json
+node_modules
+package-lock.json
+modules/*.dev
