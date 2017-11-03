@@ -26,3 +26,12 @@ A discord.js bot for Lords Mobile. Notable features include:
  `"channel_nickname" : "channel ID"`
 
  The information in `"channel_nickname"` is up to you, just remember what it is because it is needed for limiting commands to certain channels.
+
+ ## Installation
+
+ _Built using Node.js v8.1.2 and NPM v5.0.3, could require less but I'm not looking._
+
+ 1. `git clone https://github.com/septor/steam-activated-mechanoid.git`
+ 2. `cd steam-activated-mechanoid`
+ 3. `npm install`
+ 4. `node bot.js`
