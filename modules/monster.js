@@ -1,6 +1,7 @@
 let allowed = {
-    channels: ["general"]
+    channels: ["general"],
 };
+const jimp = require("jimp");
 
 module.exports.run = async(bot, prefix, message, args, chanList) => {
     let allowedChannels = [];
@@ -10,67 +11,71 @@ module.exports.run = async(bot, prefix, message, args, chanList) => {
     if(!allowedChannels.includes(message.channel.id)) return;
 
     if(!args[0]) return message.reply("I need to know which monster you're trying to kill.");
-    let flag = args.slice(-1);
-    let monster;
-    let type;
-    let playstyle;
-    if(flag.toString().toLowerCase() === "p2p") {
-        monster = args.slice(0, -1).join(' ').toLowerCase();
-        type = 1;
-        playstyle = "P2P";
-    } else {
-        monster = args.join(' ').toLowerCase();
-        type = 0;
-        playstyle = "F2P";
-    }
+    let monster = args.join(' ').toLowerCase();
 
-    let demon = bot.emojis.find("name", "demon");
-    let scarlet = bot.emojis.find("name", "scarlet");
-    let trick = bot.emojis.find("name", "trickster");
-    let tracker = bot.emojis.find("name", "tracker");
-    let crow = bot.emojis.find("name", "crow");
-    let femme = bot.emojis.find("name", "femme");
-    let eguide = bot.emojis.find("name", "ethereal");
-    let death = bot.emojis.find("name", "death_archer");
-    let shade = bot.emojis.find("name", "shade");
-    let goblin = bot.emojis.find("name", "goblin");
-    let sage = bot.emojis.find("name", "sage");
-    let ele = bot.emojis.find("name", "elemental");
-    let incin = bot.emojis.find("name", "incinerate");
-    let prima = bot.emojis.find("name", "prima");
-    let petite = bot.emojis.find("name", "petite");
-    let snow = bot.emojis.find("name", "tracker");
-    let dream = bot.emojis.find("name", "dream_witch");
-    let lore = bot.emojis.find("name", "lore");
-    let song = bot.emojis.find("name", "songstress");
-    let dark = bot.emojis.find("name", "dark_follow");
+    // TODO: only pull in images needed for the requested monster, this will also make editing the lineup array (below) easier
+    let images = [
+        './img/blank_template.png', './img/crow.png', './img/dark_follow.png', './img/death_archer.png', './img/demon.png',
+        './img/dream_witch.png', './img/elemental.png', './img/ethereal.png', './img/femme.png', './img/goblin.png',
+        './img/incinerate.png', './img/lore.png', './img/petite.png', './img/prima.png', './img/sage.png',
+        './img/scarlet.png', './img/shade.png', './img/snow.png', './img/songstress.png', './img/tracker.png',
+        './img/trickster.png'
+    ];
 
     let lineup = {
-        "blackwing": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${femme} ${tracker} ${eguide} ${crow} ${death}`],
-        "bon appeti": [`${demon} ${scarlet} ${tracker} ${trick}, ${shade}`, `${demon} ${femme} ${tracker} ${eguide} ${crow}`],
-        "frostwing": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${demon} ${scarlet} ${trick} ${tracker} ${crow}`],
-        "gargantua": [`${goblin} ${ele} ${incin} ${prima} ${snow}`, `${goblin} ${ele} ${incin} ${prima} ${snow}`],
-        "grim reaper": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${femme} ${tracker} ${eguide} ${crow} ${death}`],
-        "gryphon": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${demon} ${scarlet} ${trick} ${tracker} ${crow}`],
-        "hell drider": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${femme} ${tracker} ${eguide} ${crow} ${death}`],
-        "jade wyrm": [`${goblin} ${ele} ${incin} ${prima} ${snow}`, `${goblin} ${ele} ${incin} ${prima} ${snow}`],
-        "mecha trojan": [`${incin} ${prima} ${goblin} ${ele} ${snow}`, `${petite} ${incin} ${snow} ${dream} ${dark}`],
-        "mega maggot": [`${goblin} ${ele} ${incin} ${prima} ${snow}`, `${petite} ${song} ${incin} ${snow} ${dark}`],
-        "noceros": [`${goblin} ${ele} ${incin} ${prima} ${snow}`, `${petite} ${ele} ${incin} ${dream}, ${lore}`],
-        "queen bee": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${femme} ${tracker} ${eguide} ${crow} ${death}`],
-        "saberfang": [`${goblin} ${ele} ${incin} ${prima} ${snow}`, `${petite} ${ele} ${incin} ${snow} ${dream}`],
-        "snow beast": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${demon} ${scarlet} ${trick} ${tracker} ${crow}`],
-        "terrorthorn": [`${demon} ${scarlet} ${trick} ${tracker} ${crow}`, `${demon} ${femme} ${tracker} ${eguide} ${crow}`],
-        "tidal titan": [`${incin} ${ele} ${sage} ${prima} ${goblin}`, `${petite} ${ele} ${incin} ${snow} ${dream}`],
+        "blackwing": `4 15 20 19 1 8 19 7 1 3`,
+        "bon appeti": `4 15 19 20 16 4 8 19 7 1`,
+        "frostwing": `4 15 20 19 1 4 15 20 19 1`,
+        "gargantua": `9 6 10 13 17 9 6 10 13 17`,
+        "grim reaper": `4 15 20 19 1 8 19 7 1 3`,
+        "gryphon": `4 15 20 19 1 4 15 20 19 1`,
+        "hell drider": `4 15 20 19 1 8 19 7 1 3`,
+        "jade wyrm": `9 6 10 13 17 9 6 10 13 17`,
+        "mecha trojan": `10 13 9 6 17 13 10 17 5 2`,
+        "mega maggot": `9 6 10 13 17 13 18 10 17 2`,
+        "noceros": `9 6 10 13 17 13 6 10 5, 11`,
+        "queen bee": `4 15 20 19 1 8 19 7 1 3`,
+        "saberfang": `9 6 10 13 17 13 6 10 17 5`,
+        "snow beast": `4 15 20 19 1 4 15 20 19 1`,
+        "terrorthorn": `4 15 20 19 1 4 8 19 7 1`,
+        "tidal titan": `10 6 14 13 9 13 6 10 17 5`,
     }
 
     if(!lineup[monster]) return message.reply("I can't find that monster in my infinite tome of knowledge.");
-    message.channel.send(`The following ${playstyle} heroes will be most effective: \n\n${lineup[monster][type]}`);
+
+    let jimps = [];
+
+    for(var i = 0; i < images.length; i++) {
+        jimps.push(jimp.read(images[i]));
+    }
+
+    let heroes = lineup[monster].split(" ");
+    let randstring = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);
+
+    await Promise.all(jimps).then(function(data) {
+        return Promise.all(jimps);
+    }).then(function(data) {
+        data[0].composite(data[heroes[0]],0,30);
+        data[0].composite(data[heroes[1]],100,30);
+        data[0].composite(data[heroes[2]],200,30);
+        data[0].composite(data[heroes[3]],300,30);
+        data[0].composite(data[heroes[4]],400,30);
+        data[0].composite(data[heroes[5]],0,154);
+        data[0].composite(data[heroes[6]],100,154);
+        data[0].composite(data[heroes[7]],200,154);
+        data[0].composite(data[heroes[8]],300,154);
+        data[0].composite(data[heroes[9]],400,154);
+        data[0].write(`img/lineups/${randstring}.png`, function() {
+            message.channel.send("",{files:[`./img/lineups/${randstring}.png`]});
+        });
+    });
+
+    // TODO: remove the contents of ./img/lineups/
 }
 
 module.exports.help = {
     name: "monster",
-    description: "display a list of F2P heroes that will do the most damage to a monster",
-    usage: "monster <monster name> [p2p]",
+    description: "display a list of heroes that will do the most damage to a monster",
+    usage: "monster <monster name>",
     aliases: ['mob', 'tokill', 'lineup']
 }
