@@ -1,5 +1,5 @@
 let allowed = {
-    channels: ["general"],
+    channels: ["general"]
 };
 const jimp = require("jimp");
 
