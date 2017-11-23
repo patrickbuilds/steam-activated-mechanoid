@@ -4,8 +4,7 @@ A discord.js bot for Lords Mobile. Notable features include:
 * Darknest Rally Tracker - tracks Darknest rallies within the channel.
 * Reminder - remind yourself when your shield drops, or when a construction is finished.
 * Siren - alert the channel someone is attacking your guild's hive.
-* Monster Information - lists the best heroes to take down monsters.
-   * Currently requires special emotes, will supply more info later.
+* Monster Information - lists the best heroes, F2P and P2P, to take down monsters.
 
  ## config.json
  You will need to setup a `config.json` file and fill in the following information:
