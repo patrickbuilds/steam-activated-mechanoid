@@ -1,5 +1,5 @@
 let allowed = {
-    channels: ["general", "family", "offtopic", "founders", "members", "test"],
+    channels: ["general"],
     role: "everyone"
 };
 

@@ -10,6 +10,7 @@
     "dependencies": {
         "discord.js": "^11.2.1",
         "glob": "^7.1.2",
+        "jsonfile": "^4.0.0",
         "jimp": "^0.2.28",
         "sqlite": "^2.8.0"
     },
