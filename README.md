@@ -5,6 +5,7 @@ A discord.js bot for Lords Mobile. Notable features include:
 * Reminder - remind yourself when your shield drops, or when a construction is finished.
 * Siren - alert the channel someone is attacking your guild's hive.
 * Monster Information - lists the best heroes, F2P and P2P, to take down monsters.
+* Familiar Information - lists a familair, it's pact, and it's skills (at max level).
 
  ## config.json
  You will need to setup a `config.json` file and fill in the following information:

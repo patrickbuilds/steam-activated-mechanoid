@@ -1,0 +1,212 @@
+{
+   "Territe": {
+      "pact": "1A",
+      "skill1": "Merging Speed (Pacts) +20%",
+      "skill2": "Grants a random amount of Fragments 3 times",
+      "skill3": ""
+   },
+   "Oakroot": {
+      "pact": "1A",
+      "skill1": "Timber Production +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Magmalord": {
+      "pact": "1A",
+      "skill1": "Stone Production + 25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Engineer": {
+      "pact": "1A",
+      "skill1": "Ore Production +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Jaziek": {
+      "pact": "1A",
+      "skill1": "Vault Storage +10%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Aquiris": {
+      "pact": "1B",
+      "skill1": "Anima Production +40%",
+      "skill2": "Get 60~120 STA",
+      "skill3": ""
+   },
+   "Terraspike": {
+      "pact": "1B",
+      "skill1": "Food Production +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Gnome": {
+      "pact": "1B",
+      "skill1": "Gold Production +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Beastmaster": {
+      "pact": "1B",
+      "skill1": "Supply Troops Travel Speed +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Yeti": {
+      "pact": "1B",
+      "skill1": "Gathering Troops Travel Speed +25%",
+      "skill2": "",
+      "skill3": ""
+   },
+   "Tempestite": {
+      "pact": "2A",
+      "skill1": "Wall DEF +20%",
+      "skill2": "Energy Regain Speed +10%",
+      "skill3": "Get 20000 random Tier 1 troops"
+   },
+   "Evil Weevil": {
+      "pact": "2A",
+      "skill1": "Food Production +35%",
+      "skill2": "Get 4 hours worth of rss",
+      "skill3": ""
+   },
+   "Totempest": {
+      "pact": "2A",
+      "skill1": "Timber Production +35%",
+      "skill2": "Refreshes the Cargo Ship immediately",
+      "skill3": ""
+   },
+   "Strix": {
+      "pact": "2A",
+      "skill1": "Infirmary Healing Speed +25%",
+      "skill2": "Reduces Execution Wait time by 360 minutes",
+      "skill3": ""
+   },
+   "Sorcerer": {
+      "pact": "2A",
+      "skill1": "Allied Troop Travel Speed +25%",
+      "skill2": "Instantly complete all ongoing transmutations",
+      "skill3": ""
+   },
+   "Pyris": {
+      "pact": "2B",
+      "skill1": "Extra Supplies +20%",
+      "skill2": "Reduces Transmutation time by 10%",
+      "skill3": "Kills 7500 ~ 12000 troops in an enemy's Barracks (Will not exceed 5% of the total number of troops. Lowest Tier troops will be targeted first."
+   },
+   "Bouldur": {
+      "pact": "2B",
+      "skill1": "Stone Production + 35%",
+      "skill2": "Maxes out Help bar for ongoing construction",
+      "skill3": ""
+   },
+   "Krabby": {
+      "pact": "2B",
+      "skill1": "Ore Production +35%",
+      "skill2": "Player EXP Boost +10%",
+      "skill3": ""
+   },
+   "Bonehead": {
+      "pact": "2B",
+      "skill1": "Max Anima Storage +20%",
+      "skill2": "Get 10 Colosseum entries",
+      "skill3": ""
+   },
+   "Harpy": {
+      "pact": "2B",
+      "skill1": "Shelter Capacity +50000",
+      "skill2": "Get 3 random VIP Point items",
+      "skill3": ""
+   },
+   "Gryphon": {
+      "pact": 3,
+      "skill1": "Max Allied Troops Size +50000",
+      "skill2": "Training Speed +5%",
+      "skill3": "Recalls all troops within 6s (Does not include Coalition Troops)"
+   },
+   "Noceros": {
+      "pact": 3,
+      "skill1": "Army Capacity +35%",
+      "skill2": "Cavalry ATK +10%",
+      "skill3": "Completes gathering of 5 random Gathering Armies (not applicable for Gem Lodes doesn't grant even points)."
+   },
+   "Gemming Gremlin": {
+      "pact": 3,
+      "skill1": "Construction Speed +5%",
+      "skill2": "Gem Gathering Speed +10%",
+      "skill3": "Grants 1000 ~ 2000 Gems"
+   },
+   "Goblin": {
+      "pact": 3,
+      "skill1": "Gathering Speed +25%",
+      "skill2": "Gold Production +35%",
+      "skill3": "Get 6000000 ~ 12000000 Gold"
+   },
+   "Trickstar": {
+      "pact": 3,
+      "skill1": "Research Speed +5%",
+      "skill2": "Ranged ATK +10%",
+      "skill3": "Grants 3 random Holy Star items"
+   },
+   "Magus": {
+      "pact": 3,
+      "skill1": "Pact Merging +5",
+      "skill2": "Altar Stat Boost Duration +360 minutes",
+      "skill3": "Fills up Help Bar for ongoing research"
+   },
+   "Mole Shaman": {
+      "pact": 3,
+      "skill1": "Infirmary Capacity +5%",
+      "skill2": "Infantry ATK +10%",
+      "skill3": "Repairs 50% Wall HP"
+   },
+   "Mecha Trojan": {
+      "pact": 4,
+      "skill1": "Cavalry Max HP +10%",
+      "skill2": "Army DEF (Battle Fury) +10%",
+      "skill3": "Increase Max Coalition Army size by 125000 for 30 minutes"
+   },
+   "Grim Reaper": {
+      "pact": 4,
+      "skill1": "Travel Speed +10%",
+      "skill2": "Ranged Max HP +10%",
+      "skill3": "Kills 20000 ~ 50000 troops in an enemy's Barracks (Will not exceed 5% of the total number of troops). Highest Tier troops will be targeted first."
+   },
+   "Tidal Titan": {
+      "pact": 4,
+      "skill1": "Infantry Max HP +10%",
+      "skill2": "Army DEF +10%",
+      "skill3": "Relocates an enemy Turf after a successful attack. Effective for 15 minutes activates only once"
+   },
+   "Hell Drider": {
+      "pact": 4,
+      "skill1": "Infantry Max HP +10%",
+      "skill2": "Leader Escape +10%",
+      "skill3": "Grants 15000 random troops from the highest Tier available to you."
+   },
+   "Mega Maggot": {
+      "pact": 4,
+      "skill1": "Barracks Capacity +5000",
+      "skill2": "Infantry DEF +10%",
+      "skill3": "Reduces an enemy's resources production by 95% for 360 minutes"
+   },
+   "Saberfang": {
+      "pact": 4,
+      "skill1": "Monster Hunt Travel Speed +25%",
+      "skill2": "Cavalry DEF +10%",
+      "skill3": "Add 15 hunts in a Row once within 15 minutes. Cannot exceed Hunts in a Row limit."
+   },
+   "Snow Beast": {
+      "pact": 4,
+      "skill1": "Darknest Coalition Army Travel Speed +25%",
+      "skill2": "Ranged DEF +10%",
+      "skill3": "Increase Supply Capacity by 300% for 6 minutes"
+   },
+   "Hoarder": {
+      "pact": 4,
+      "skill1": "Max Deposit +10000",
+      "skill2": "Merging Speed (Skillstones) +20%",
+      "skill3": "Grants 3 random Jewels."
+   }
+}
