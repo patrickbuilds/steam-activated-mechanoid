@@ -24,6 +24,7 @@ module.exports.run = async(bot, prefix, message, args, chanList) => {
 
     let lineup = {
         "blackwing": `4 15 20 19 1 8 19 7 1 3`,
+        "voodoo shaman": `4 15 20 19 1 8 19 7 1 3`,
         "bon appeti": `4 15 19 20 16 4 8 19 7 1`,
         "frostwing": `4 15 20 19 1 4 15 20 19 1`,
         "gargantua": `9 6 10 13 17 9 6 10 13 17`,
