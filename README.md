@@ -1,3 +1,6 @@
+(This project is no longer actively maintained, and work to fix issues will probably not happen.)
+
+
 # steam-activated-mechanoid
 A discord.js bot for Lords Mobile. Notable features include:
 
